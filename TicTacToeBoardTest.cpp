@@ -20,3 +20,12 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoardTest, testToggle){
+	TicTacToeBoard test;
+	test.toggleTurn();
+
+	ASSERT_TRUE(test.turn==O);
+}
+
+TEST(TicTacToeBoardTest, )
