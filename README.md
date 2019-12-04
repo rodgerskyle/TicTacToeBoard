@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rodgerskyle/TicTacToeBoard.svg?branch=master)](https://travis-ci.org/rodgerskyle/TicTacToeBoard)
+[![Coverage Status](https://coveralls.io/repos/github/rodgerskyle/TicTacToeBoard/badge.svg?branch=master)](https://coveralls.io/github/rodgerskyle/TicTacToeBoard?branch=master)
 # TicTacToeBoard
 
 ## Associated Enumerated Types
