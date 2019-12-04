@@ -34,11 +34,24 @@ TEST(TicTacToeBoardTest, testPlacePiece){
 	ASSERT_EQ(test.placePiece(0, 0), X);
 }
 
+TEST(TicTacToeBoardTest, testPlacePieceInvalid){
+	TicTacToeBoard test;
+
+	ASSERT_EQ(test.placePiece(3, 0), Invalid);
+}
+
 TEST(TicTacToeBoardTest, testGetPiece){
 	TicTacToeBoard test;
 	test.placePiece(0,0);
 
 	ASSERT_EQ(test.getPiece(0, 0), X);
+}
+
+TEST(TicTacToeBoardTest, testGetPieceInvalid){
+	TicTacToeBoard test;
+	test.placePiece(2,0);
+
+	ASSERT_EQ(test.getPiece(3, 0), Invalid);
 }
 
 TEST(TicTacToeBoardTest, testGetWinner){
@@ -48,6 +61,36 @@ TEST(TicTacToeBoardTest, testGetWinner){
 	test.placePiece(0,1); //X
 	test.placePiece(1,1); //O
 	test.placePiece(0,2); //X
+	ASSERT_EQ(test.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, testGetWinnerVertical){
+	TicTacToeBoard test;
+	test.placePiece(0,0); //X
+	test.placePiece(0,1); //O
+	test.placePiece(1,0); //X
+	test.placePiece(1,1); //O
+	test.placePiece(2,0); //X
+	ASSERT_EQ(test.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, testGetWinnerDiagonal1){
+	TicTacToeBoard test;
+	test.placePiece(0,0); //X
+	test.placePiece(0,1); //O
+	test.placePiece(1,1); //X
+	test.placePiece(1,0); //O
+	test.placePiece(2,2); //X
+	ASSERT_EQ(test.getWinner(), X);
+}
+
+TEST(TicTacToeBoardTest, testGetWinnerDiagonal2){
+	TicTacToeBoard test;
+	test.placePiece(0,2); //X
+	test.placePiece(0,1); //O
+	test.placePiece(1,1); //X
+	test.placePiece(1,0); //O
+	test.placePiece(2,0); //X
 	ASSERT_EQ(test.getWinner(), X);
 }
 
