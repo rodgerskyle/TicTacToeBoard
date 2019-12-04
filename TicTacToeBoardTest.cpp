@@ -94,4 +94,18 @@ TEST(TicTacToeBoardTest, testGetWinnerDiagonal2){
 	ASSERT_EQ(test.getWinner(), X);
 }
 
+TEST(TicTacToeBoardTest, testGetWinnerBlank){
+	TicTacToeBoard test;
+	test.placePiece(0,0); //X
+	test.placePiece(0,1); //O
+	test.placePiece(0,2); //X
+	test.placePiece(1,1); //O
+	test.placePiece(1,2); //X
+	test.placePiece(1,0); //O
+	test.placePiece(2,1); //X
+	test.placePiece(2,2); //O
+	test.placePiece(2,0); //X
+	ASSERT_EQ(test.getWinner(), Blank);
+}
+
 //TEST(TicTacToeBoardTest, )
